@@ -138,3 +138,28 @@ shape: (50, 4)
 column uuids's metadata is lala
 column new_uuids's metadata is hi
 column uuid_roundtrip's metadata is from strs
+```
+
+If I comment out the `dyn_display_value` func then the last bit becomes:
+
+```
+printing df after uuid exprs
+shape: (50, 4)
+┌─────────────────────────────────┬─────────────────────────────────┬─────────────────────────────────┬─────────────────────────────────┐
+│ uuids                           ┆ new_uuids                       ┆ as_strs                         ┆ uuid_roundtrip                  │
+│ ---                             ┆ ---                             ┆ ---                             ┆ ---                             │
+│ ext[arrow.uuid]                 ┆ ext[arrow.uuid]                 ┆ str                             ┆ ext[arrow.uuid]                 │
+╞═════════════════════════════════╪═════════════════════════════════╪═════════════════════════════════╪═════════════════════════════════╡
+│ b"\xf7\xae\xc6w\xf6\x9aIl\xae(… ┆ b"\xa8\xd3\x8a\x12W\xcfN-\xb3;… ┆ a8d38a12-57cf-4e2d-b33b-907b35… ┆ b"\xa8\xd3\x8a\x12W\xcfN-\xb3;… │
+│ b"kC\xaa\xe5\xa0jBz\x89\xd8\xa… ┆ b"\xb15\x1dgP?F3\xb4\xa5\xb5\x… ┆ b1351d67-503f-4633-b4a5-b519e0… ┆ b"\xb15\x1dgP?F3\xb4\xa5\xb5\x… │
+│ b"v\x96\xb6\xe7\xf0\xfaJ\xbc\x… ┆ b"\xc0\xe5\x8e&\xbczB\x1e\x8c\… ┆ c0e58e26-bc7a-421e-8ce0-b4491b… ┆ b"\xc0\xe5\x8e&\xbczB\x1e\x8c\… │
+│ b"\x8e\x8a\x1b}<YG\xd5\x8e\xcd… ┆ b"b\xe9U\xcb\x93\x85Hs\xadj]\x… ┆ 62e955cb-9385-4873-ad6a-5de07f… ┆ b"b\xe9U\xcb\x93\x85Hs\xadj]\x… │
+│ b"?OM\xaf,\xc8K\xc6\x90t\xd5K\… ┆ b"yo\x1e\xe6\x93#OG\xab^yn\x20… ┆ 796f1ee6-9323-4f47-ab5e-796e20… ┆ b"yo\x1e\xe6\x93#OG\xab^yn\x20… │
+│ …                               ┆ …                               ┆ …                               ┆ …                               │
+│ b"\x8e\x05\x9b\xb7!YL\xb0\xa5\… ┆ b"IB|\xd6o^K\xed\xba\xedz\xe0\… ┆ 49427cd6-6f5e-4bed-baed-7ae0bb… ┆ b"IB|\xd6o^K\xed\xba\xedz\xe0\… │
+│ b"\xbf\x8eAQ\x80\xf7H\xda\x85l… ┆ b";\xb0\x17\xdbY\xf2N\xec\xb3\… ┆ 3bb017db-59f2-4eec-b3be-5d84df… ┆ b";\xb0\x17\xdbY\xf2N\xec\xb3\… │
+│ b"t\xd2J(\xd2\xb8E\xaa\xbb\x14… ┆ b"v\xa9\xdf\x15\xa6\xccH1\xbb\… ┆ 76a9df15-a6cc-4831-bb03-78aa87… ┆ b"v\xa9\xdf\x15\xa6\xccH1\xbb\… │
+│ b"\x1e\x8c0\xa7%>D\xc6\x9b\x8b… ┆ b"\xa1D\x8e\x14\xec&N>\xa2A<%\… ┆ a1448e14-ec26-4e3e-a241-3c25df… ┆ b"\xa1D\x8e\x14\xec&N>\xa2A<%\… │
+│ b">\xf8]\x92\x0c\xdeD\x20\xb2\… ┆ b"\xa6DW\x1b\xfc<D}\x93\x99;\x… ┆ a644571b-fc3c-447d-9399-3bd8ab… ┆ b"\xa6DW\x1b\xfc<D}\x93\x99;\x… │
+└─────────────────────────────────┴─────────────────────────────────┴─────────────────────────────────┴─────────────────────────────────┘
+```
