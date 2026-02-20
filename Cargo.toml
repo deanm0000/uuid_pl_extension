@@ -1,0 +1,15 @@
+[package]
+name = "uuid_pl_extension"
+version = "0.1.0"
+edition = "2024"
+
+
+[dependencies]
+# pyo3 = { version = "0.27", features = [
+#     "extension-module",
+#     "chrono"
+# ] }
+polars = { path="/home/dean/pyjs/modules/polars/crates/polars", features = ["lazy", "dtype-extension", "object"]}
+# pyo3-polars = {version="0.26.0", features=["lazy"]}
+polars-core = {path="/home/dean/pyjs/modules/polars/crates/polars-core", features=["dtype-extension", "object"]}
+uuid = {version="1.21.0", features=["v4"]}
