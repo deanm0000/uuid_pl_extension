@@ -9,7 +9,7 @@ edition = "2024"
 #     "extension-module",
 #     "chrono"
 # ] }
-polars = { path="/home/dean/pyjs/modules/polars/crates/polars", features = ["lazy", "dtype-extension", "object"]}
+polars = { git="https://github.com/deanm0000/polars.git", branch="extension_type_dyn_print_value", features = ["lazy", "dtype-extension", "object"]}
 # pyo3-polars = {version="0.26.0", features=["lazy"]}
-polars-core = {path="/home/dean/pyjs/modules/polars/crates/polars-core", features=["dtype-extension", "object"]}
+polars-core = {git="https://github.com/deanm0000/polars.git", branch="extension_type_dyn_print_value", features=["dtype-extension", "object"]}
 uuid = {version="1.21.0", features=["v4"]}
